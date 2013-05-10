@@ -1,0 +1,130 @@
+
+
+###############   Using vga_switcheroo   ######################"
+
+Once you've ensured that vga_switcheroo is available, you can use these options to switch between GPUs. Be prepared for a lockup (either immediately, or after a minute), the existence of this file does not mean that the machine is supported.
+
+
+echo ON > /sys/kernel/debug/vgaswitcheroo/switch
+Turns on the GPU that is disconnected (not currently driving outputs), but does not switch outputs.
+
+
+echo IGD > /sys/kernel/debug/vgaswitcheroo/switch
+Connects integrated graphics with outputs.
+
+
+echo DIS > /sys/kernel/debug/vgaswitcheroo/switch
+Connects discrete graphics with outputs.
+
+
+echo OFF > /sys/kernel/debug/vgaswitcheroo/switch
+Turns off the graphics card that is currently disconnected.
+
+There are also a couple of options that are useful from inside an X-Windows session:
+
+
+echo DIGD > /sys/kernel/debug/vgaswitcheroo/switch
+Queues a switch to integrated graphics to occur when the X server is next restarted.
+
+
+echo DDIS > /sys/kernel/debug/vgaswitcheroo/switch
+Queues a switch to discrete graphics to occur when the X server is next restarted.
+
+
+cat /sys/kernel/debug/vgaswitcheroo/switch
+Allows you to verify the current state of the hybrid graphics. Typically, there will be two lines of output - one should indicate "Pwr" and the other should indicate "Off".
+
+////
+Lignes à ajouter dans le fichier rc.local afin d'empêcher la carte graphique (discrete) d'être active au démarrage  ( /etc/rc.local )
+chown <your user name> /sys/kernel/debug/vgaswitcheroo/switch
+echo OFF > /sys/kernel/debug/vgaswitcheroo/switch
+echo DIGD > /sys/kernel/debug/vgaswitcheroo/switch    (pas sûr de l'utilité ^^)
+////
+
+#################################################################################################
+
+
+#################################################################################################
+
+gksudo gedit = commande pour ouvrir et editer un fichier
+
+updatedb = commande pour mettre à jour la base de donnée de la fonction "locate"
+
+locate = localise un fichier
+
+cd = entre dans le dossier spécifié
+
+ls = liste des éléments dans le fichier ("-a" pour ajouter à la lite les fichier cachés)
+
+ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime = permet d'accéder en ligne de commande à un fichier ou logiciel (ici l'exécutable de sublime text 2 qui est dans /opt/Sublime text 2/) et se nomme sublime_text , on  ajoute ensuite dans quel répertoire on va envoyer le fichier créé et son nom {nom qui permettra de l'appeller})
+
+##################################################################################################
+
+
+
+#################################################################################################
+
+Ajouter un raccourci au menu : Edite un fichier.desktop dans usr/share/applications
+
+Ajouter une associationde fichier : Edite les fichiers defaults.list (2 à éditer)
+
+Ajouter un choix au menu déroulant : Ajoute une ligne du type MimeType=text/x-python; dans le .desktop (verifier le type en faisant propriété sur un fichier du type voulu)
+
+Attention les fichiers mime ou list de ce dossier sont prioritaires sur ceux de root (surement lorsque je suis connecté en pampi seulement)
+/home/pampi/.local/share/applications
+
+#################################################################################################
+
+
+
+##################################################################################################
+
+ssh-add id_rsa = permet de charger le ssh pour Git dans le .ssh
+ssh-add /home/pampi/.ssh/id_rsa = ajoute la clé
+
+ssh-add -l = liste la clé liée (vérifie l'ajout)
+
+ssh -T git@github.com = test la connection à l'hôte
+
+##################################################################################################
+
+
+
+
+
+###############################################################################################
+Mise à jour d'un seul logiciel:
+sudo apt-get update (met à jour la liste des packages)
+sudo apt-get install nom_du_logiciel, nom_du_logiciel2, ...
+
+#############################
+
+Mise à jour de tous les logiciels déjà installés :
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+
+#############################
+
+Désinstaller un paquet correctement
+apt-get remove nom_du_logiciel
+apt-get autoremove nom_du_logiciel (libère de la place en supprimant les dépendances inutiles)
+
+
+#############################
+
+Autres
+apt-cache search permet de rechercher dans la liste des paquets
+
+#################################################################################################
+
+
+#############################
+
+Lancer une commande non renseigné dans le $PATH
+Etape 1 : se mettre dan le dossier contenant la commande
+Etape 2 : ./nom_commande nom_fichier_à_ouvrir (ou la variable -help pour l'aide)
+
+#############################
+
+
