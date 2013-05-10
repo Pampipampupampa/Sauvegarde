@@ -57,6 +57,7 @@ cd = entre dans le dossier spécifié
 ls = liste des éléments dans le fichier ("-a" pour ajouter à la lite les fichier cachés)
 
 ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime = permet d'accéder en ligne de commande à un fichier ou logiciel (ici l'exécutable de sublime text 2 qui est dans /opt/Sublime text 2/) et se nomme sublime_text , on  ajoute ensuite dans quel répertoire on va envoyer le fichier créé et son nom {nom qui permettra de l'appeller})
+Création d'un lien entre les 2 fichiers pour simplifié son appel en ligne de commande
 
 ##################################################################################################
 
