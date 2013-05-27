@@ -43,6 +43,17 @@ echo DIGD > /sys/kernel/debug/vgaswitcheroo/switch    (pas sûr de l'utilité ^^
 
 #################################################################################################
 
+Utiliser la carte propriétaire :
+
+Connaitre ses chipsets / cartes graphiques : lspci | grep VGA
+
+
+
+
+
+#################################################################################################
+
+VA API = video acceleration API = meilleur lecture des fichier hd avec le chipset du processeur
 
 #################################################################################################
 
