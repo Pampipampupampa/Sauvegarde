@@ -1,0 +1,38 @@
+{
+    /*
+    Affiche les erreurs à la sauvegarde
+    */
+	"sublimelinter_popup_errors_on_save": true,
+
+    /*
+    Choose the theme for gutter marks; available built-in options are:
+    "alpha", "bright", "dark", "hard" and "simple"
+
+    Anything else will be treated as a path to a set of images.
+    For instance, setting the value to "../User/my-awesome-theme"
+    would cause SublimeLinter to look for the images:
+    "../User/my-awesome-theme-illegal.png",
+    "../User/my-awesome-theme-violation.png",
+    "../User/my-awesome-theme-warning.png"
+    These images should all be approximately 32x32px.
+    */
+    "sublimelinter_gutter_marks_theme": "bright",
+    
+
+    // Set this to false to turn pep8 checking off completely
+    "pep8": true,
+
+
+    /*
+        A list of pep8 error numbers to ignore. By default "line too long" errors are ignored.
+        The list of error codes is in this file: https://github.com/jcrocholl/pep8/blob/master/pep8.py.
+        Search for "Ennn:", where nnn is a 3-digit number.
+    */
+    "pep8_ignore":
+    [
+        "E501",
+        "W191"
+    ]
+
+
+}

@@ -1,0 +1,15 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"AndyPython",
+		"Gist",
+		"Git",
+		"HTMLAttributes",
+		"HTMLBeautify",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeREPL"
+	]
+}
