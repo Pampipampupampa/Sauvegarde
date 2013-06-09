@@ -11,14 +11,14 @@
 	///// Raccourci logiciel de base : /////
 	////////////////////////////////////////
 
-	{ "keys": ["ctrl+shift+1"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+shift+2"], "command": "focus_group", "args": { "group": 1 } },
-	{ "keys": ["ctrl+shift+3"], "command": "focus_group", "args": { "group": 2 } },
-	{ "keys": ["ctrl+shift+4"], "command": "focus_group", "args": { "group": 3 } },
-	{ "keys": ["ctrl+alt+&"], "command": "move_to_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+alt+é"], "command": "move_to_group", "args": { "group": 1 } },
-	{ "keys": ["ctrl+alt+3"], "command": "move_to_group", "args": { "group": 2 } },
-	{ "keys": ["ctrl+alt+'"], "command": "move_to_group", "args": { "group": 3 } },
+	{ "keys": ["ctrl+&"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+é"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
+	{ "keys": ["ctrl+'"], "command": "focus_group", "args": { "group": 3 } },
+	{ "keys": ["ctrl+shift+&"], "command": "move_to_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+shift+é"], "command": "move_to_group", "args": { "group": 1 } },
+	{ "keys": ["ctrl+shift+3"], "command": "move_to_group", "args": { "group": 2 } },
+	{ "keys": ["ctrl+shift+'"], "command": "move_to_group", "args": { "group": 3 } },
 	{ "keys": ["ctrl+0"], "command": "focus_side_bar" },
 
 
@@ -62,6 +62,9 @@
 	{ "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
 		"context": [{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
 	},
+
+	{ "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
 
 
 	//////////////////////////////////////////////////////////////////////////

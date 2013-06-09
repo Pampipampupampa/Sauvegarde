@@ -1,11 +1,18 @@
 {
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"draw_minimap_border": false,
 	"font_face": "Anonymous Pro",
 	"font_size": 16,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"indent_to_bracket": true
+
+	"indent_to_bracket": true,
+	
+	// Disables horizontal scrolling if enabled.
+    // May be set to true, false, or "auto", where it will be disabled for
+    // source code, and otherwise enabled.
+    "word_wrap": "auto"
 }
