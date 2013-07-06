@@ -95,6 +95,13 @@
 	/////Raccourci Sublime linter/////
 	//////////////////////////////////
 	
-	{ "keys": ["ctrl+alt+m"], "command": "sublimelinter", "args": {"action": "lint"}}
+	{ "keys": ["ctrl+alt+m"], "command": "sublimelinter", "args": {"action": "lint"}},
+
+
+	/////////////////////////////////
+	///// Search in browser /////////
+	/////////////////////////////////
+
+	{ "keys": ["ctrl+alt+g"], "command": "open_browser", "args" : {"url" : "http://docs.python.org/3.3/search.html?q=%s"}}
 
 ]

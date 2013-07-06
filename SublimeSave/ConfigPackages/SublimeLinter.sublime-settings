@@ -16,8 +16,8 @@
     "../User/my-awesome-theme-warning.png"
     These images should all be approximately 32x32px.
     */
-    "sublimelinter_gutter_marks_theme": "bright",
-    
+    "sublimelinter_gutter_marks_theme": "simple",
+
 
     // Set this to false to turn pep8 checking off completely
     "pep8": true,

@@ -3,13 +3,17 @@
 	[
 		"AdvancedNewFile",
 		"AndyPython",
+		"ColorPicker",
 		"Gist",
 		"Git",
 		"HTMLAttributes",
 		"HTMLBeautify",
+		"LaTeXTools",
 		"Package Control",
+		"Search in Browser",
 		"SideBarEnhancements",
 		"SublimeLinter",
-		"SublimeREPL"
+		"SublimeREPL",
+		"Theme - Centurion"
 	]
 }
