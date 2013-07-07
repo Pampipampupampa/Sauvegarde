@@ -116,14 +116,18 @@
     {
         "class": "scroll_bar_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Default/normal_bar_horizontal.png",
+        // "layer0.texture": "Theme - Default/normal_bar_horizontal.png",
+        "layer0.texture": "",
+        "layer0.tint": [26,96,100],
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [6, 0],
         "blur": false
     },
     {
         "class": "scroll_corner_control",
-        "layer0.texture": "Theme - Default/normal_bar_corner.png",
+        // "layer0.texture": "Theme - Default/normal_bar_corner.png",
+        "layer0.texture": "",
+        "layer0.tint": [26,96,100],
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [1, 1]
     },
@@ -133,8 +137,8 @@
         // "layer0.texture": "",
         "layer0.tint": [255,255,255],
         "layer0.opacity": 1.0,
-        "layer0.inner_margin": [0, 15],
-        "content_margin": [6, 12],
+        "layer0.inner_margin": [5, 5],
+        "content_margin": [8, 15],
         "blur": false
     },
     {
@@ -286,7 +290,8 @@
     {
         "class": "tree_row",
         "attributes": ["selected"],
-        "layer0.opacity": 0.8
+        // "layer0.opacity": 0.8
+        "layer0.opacity": 0.9
         // TODO: fix selected row color & shadow
     },
     {
@@ -321,7 +326,8 @@
         "indent_offset": 17,
         "indent_top_level": false,
         // "layer0.tint": [210,210,210],
-        "layer0.tint": [40,120,100],
+        // "layer0.tint": [40,120,100],
+        "layer0.tint": [26,96,100],
         "layer0.opacity": 1.0,
         "dark_content": false
     },
@@ -366,7 +372,8 @@
 
     {
         "class": "minimap_control",
-        "viewport_color": [68, 68, 68, 96]
+        // "viewport_color": [26,96,100, 100]
+        "viewport_color": [90,147,94, 80]
     },
     {
         "class": "text_line_control",
@@ -385,7 +392,7 @@
         "class": "status_bar",
         // "layer0.texture": "Theme - Default/status_bar.png",
         "layer0.texture": "",
-        "layer0.tint": [26,96,100],
+        "layer0.tint": [26,70,80],
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 2],
         "content_margin": [4, 3, 4, 3]
@@ -540,13 +547,13 @@
 
     {
         "class": "tabset_control",
-
         "layer0.opacity": 1.0,
         "tint_index": 0,
 
-        "layer1.texture": "Theme - Default/tabset_background_transparent.png",
+        // "layer1.texture": "Theme - Default/tabset_background_transparent.png",
+        "layer1.texture": "",
         "layer1.inner_margin": [2, 6],
-        "layer1.opacity": 1.0,
+        "layer1.opacity": 0.5,
 
         "content_margin": [3, 0, 3, 1],
         "tab_overlap": 10,
