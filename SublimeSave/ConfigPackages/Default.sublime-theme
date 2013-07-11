@@ -207,9 +207,11 @@
 
     {
         "class": "panel_control",
-        "layer0.texture": "Theme - Default/status_bar.png",
+        // "layer0.texture": "Theme - Default/status_bar.png",
+        "layer0.texture": "",
+        "layer0.tint": [30,60,90],
         "layer0.inner_margin": [2, 2, 2, 2],
-        "content_margin": [0, 1],
+        "content_margin": [0, 2],
         "layer0.opacity": 1.0
     },
     {
@@ -410,14 +412,14 @@
     {
         "class": "quick_panel",
         "row_padding": 8,
-        "layer0.tint": [30, 30, 30],
+        "layer0.tint": [26,96,100],
         "layer0.opacity": 1.0,
         "dark_content": true
     },
     {
         "class": "quick_panel_row",
         "layer0.texture": "",
-        "layer0.tint": [30,30,30],
+        "layer0.tint": [26,96,100],
         "layer0.inner_margin": 8,
         "layer0.opacity": 1.0
     },
