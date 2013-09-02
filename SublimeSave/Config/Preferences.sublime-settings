@@ -1,10 +1,10 @@
 {
 	"bold_folder_labels": false,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 	"draw_minimap_border": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Anonymous Pro",
-	"font_size": 16,
+	"font_size": 17,
 	"ignored_packages":
 	[
 		"Vintage"

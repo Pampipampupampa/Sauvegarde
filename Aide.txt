@@ -142,3 +142,20 @@ Etape 2 : ./nom_commande nom_fichier_à_ouvrir (ou la variable -help pour l'aide
 Vérifier ses mots de passe et les changer : seahorse (terminal)
 
 #############################
+
+
+#############################
+
+Permet de se connecter en superUtilisateur pour PostgreSQL et ainsi ajouter
+des rôle ou tout autres actions demandant les droit "suprême"
+
+sudo su - postgres
+
+#############################
+
+
+#############################
+
+Vérifier la température de la carte graphique : aticonfig --adapter=0 --od-gettemperature
+
+#############################
