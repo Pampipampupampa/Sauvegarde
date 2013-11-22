@@ -1,8 +1,0 @@
-{
-	"cmd": [
-		"/usr/bin/flashplayerdebugger",
-		//"-o", "${project_base_name}.swf",
-		"${file}"
-	],
-	"selector": "source.swf"
-}
