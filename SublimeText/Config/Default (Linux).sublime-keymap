@@ -1,0 +1,137 @@
+[
+	////////////////////////////////////////////////////////////////
+	///// Raccourcis pour advanced new file (package ajouté) : /////
+	////////////////////////////////////////////////////////////////
+
+	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
+	{ "keys": ["shift+ctrl+alt+n"], "command": "advanced_new_file", "args": {"is_python": true}},
+
+
+	////////////////////////////////////////
+	///// Raccourci logiciel de base : /////
+	////////////////////////////////////////
+
+	{ "keys": ["ctrl+&"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+é"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
+	{ "keys": ["ctrl+'"], "command": "focus_group", "args": { "group": 3 } },
+	{ "keys": ["ctrl+shift+&"], "command": "move_to_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+shift+é"], "command": "move_to_group", "args": { "group": 1 } },
+	{ "keys": ["ctrl+shift+3"], "command": "move_to_group", "args": { "group": 2 } },
+	{ "keys": ["ctrl+shift+'"], "command": "move_to_group", "args": { "group": 3 } },
+	{ "keys": ["ctrl+0"], "command": "focus_side_bar" },
+
+
+	{ "keys": ["alt+x"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+,"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+	{ "keys": ["ctrl+shift+h"], "command": "goto_documentation" },
+	{ "keys": ["shift+f1"], "command": "py_help" },
+
+	// Find panel key bindings
+	{ "keys": ["enter"], "command": "find_next", "context":
+		[{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["shift+enter"], "command": "find_prev", "context":
+		[{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+		 "context": [{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]
+	},
+
+	// Replace panel key bindings
+	{ "keys": ["enter"], "command": "find_next", "context":
+		[{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["shift+enter"], "command": "find_prev", "context":
+		[{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+		"context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["ctrl+alt+enter"], "command": "replace_all", "args": {"close_panel": true},
+		 "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]
+	},
+
+	// Incremental find panel key bindings
+	{ "keys": ["enter"], "command": "hide_panel", "context":
+		[{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["shift+enter"], "command": "find_prev", "context":
+		[{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
+	},
+	{ "keys": ["alt+enter"], "command": "find_all", "args": {"close_panel": true},
+		"context": [{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
+	},
+
+// Autocompletation voulue
+	{ "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
+
+	{ "keys": ["ctrl+space"], "command": "auto_complete" },
+	{ "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+	//////////////////////////////////////////////////////////////////////////
+	/////Raccourci pour passer d'un thème à un autre par simple raccourci/////
+	//////////////////////////////////////////////////////////////////////////
+
+	{
+    "keys": ["ctrl+*"],
+    "command": "set_setting",
+    "args":
+    	{
+       	 	"setting": "color_scheme",
+        	"value": "Packages/User/Theme/DarkSolarizedMod.tmTheme"
+        	// "setting": "theme",
+        	// "value": "../Installed Packages/Theme - DarkSolarized/DarkSolarized.sublime-theme"
+    	}
+	},
+	{
+    "keys": ["ctrl+ù"],
+    "command": "set_setting",
+    "args":
+    	{
+       	 	"setting": "color_scheme",
+        	"value": "Packages/Color Scheme - Default/Solarized (Light).tmTheme"
+    	}
+	},
+
+
+	//////////////////////////////////
+	/////Raccourci Sublime linter/////
+	//////////////////////////////////
+
+	{ "keys": ["ctrl+alt+m"], "command": "sublimelinter", "args": {"action": "lint"}},
+
+
+	/////////////////////////////////
+	///// Search in browser /////////
+	/////////////////////////////////
+
+	{ "keys": ["ctrl+alt+g"], "command": "open_browser", "args" : {"url" : "http://docs.python.org/3.3/search.html?q=%s"}},
+	{ "keys": ["ctrl+alt+f"], "command": "open_browser", "args" : {"url" : "http://www.pygame.org/docs/ref/%s.html"}},
+	{ "keys": ["ctrl+alt+h"], "command": "open_browser", "args" : {"url" : "http://srinikom.github.io/pyside-docs/search.html?q=%s"}},
+
+
+	////////////////////////////////
+	///////////// Rope /////////////
+	////////////////////////////////
+
+    { "keys": ["ctrl+alt+m"], "command": "python_get_documentation"},
+
+
+	/////////////////////////////////////////
+	///////////// Sticky Search /////////////
+	/////////////////////////////////////////
+
+	// <binding key="ctrl+shift+keypad_divide" command="findNext" />
+	{ "keys": ["ctrl+!"], "command": "stickysearch", "args": {"op" : "set"} },
+	{ "keys": ["ctrl+shift+!"], "command": "stickysearch", "args": {"op" : "add"} },
+	{ "keys": ["ctrl+alt+!"], "command": "stickysearch", "args": {"op" : "clear"} }
+
+
+]

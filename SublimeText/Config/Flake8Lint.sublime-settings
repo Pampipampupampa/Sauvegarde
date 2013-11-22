@@ -1,0 +1,29 @@
+{
+        // show a mark in the gutter on all lines with errors/warnings:
+    // - "dot", "circle" or "bookmark" to show marks
+    // - "" (empty string) to do not show marks
+    "gutter_marks": "",
+
+
+    // set python interpreter (lint files for python >= 2.7):
+    // - 'internal' for use internal Sublime Text 2 interpreter (2.6)
+    // - 'auto' for search default system python interpreter (default value)
+    // - absolute path to python interpreter for define another one
+    //   use platform specific notation, i.e. "C:\\Anaconda\\envs\\py33\\python.exe"
+    //   for Windows or then "/home/whatever/pythondist/python" for Unix
+    "python_interpreter": "/usr/bin/python3",
+
+    // list of python built-in functions (like '_')
+    "builtins": [],
+
+    // turn on pyflakes error lint
+    "pyflakes": true,
+    // turn on pep8 error lint
+    "pep8": true,
+
+    // skip errors and warnings (e.g. ["E303", E4", "W"])
+    "ignore": [
+                "E501",
+                "W191"
+              ],
+}
