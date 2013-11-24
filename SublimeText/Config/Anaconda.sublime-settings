@@ -1,0 +1,76 @@
+{
+
+    /*
+        Default python interpreter.
+
+        This can (an should) be overriden byb project settings
+    */
+    "python_interpreter": "python3",
+
+    /*
+        Do not fix the errors listed here:
+    */
+    "autoformat_ignore":
+    [
+        "E501",
+        "W191"
+    ],
+
+    /*
+        Sets the linting behaviour for anaconda:
+
+        "always" - Linting works always even while you are writting (in the background)
+        "load-save" - Linting works in file load and save only
+        "save-only" - Linting works in file save only
+    */
+    "anaconda_linting_behaviour": "load-save",
+
+    /*
+        The minimum delay in seconds (fractional seconds are okay) before
+        a linter is run when the "sublimelinter" setting is true. This allows
+        you to have background linting active, but defer the actual linting
+        until you are idle. When this value is greater than the built in linting delay,
+        errors are erased when the file is modified, since the assumption is
+        you don't want to see errors while you type.
+    */
+    "anaconda_linter_delay": 0.5,
+
+    // If true, anaconda draws gutter marks on line with errors
+    "anaconda_gutter_marks": true,
+
+    /*
+
+        If anaconda_gutter_marks is true, this determines what theme is used.
+        Theme 'basic' only adds dots and circles to gutter.
+
+        Other available themes are 'alpha', 'bright', 'dark', 'hard' and
+        'simple'. To see icons that will be used for each theme check
+        gutter_icon_themes folder in Anaconda package.
+    */
+    "anaconda_gutter_theme": "hard",
+
+    /*
+        If 'outline' (default) anaconda will outline error lines
+        If 'fill' anconda will fill the lines
+        If 'none' anaconda will not draw anything on error lines
+    */
+    "anaconda_linter_mark_style": "outline",
+
+    // Set this to false to turn pep8 checking off completely
+    "pep8": true,
+
+    /*
+        A list of pep8 error numbers to ignore. By default "line too long" errors are ignored.
+        The list of error codes is in this file: https://github.com/jcrocholl/pep8/blob/master/pep8.py.
+        Search for "Ennn:", where nnn is a 3-digit number.
+    */
+    "pep8_ignore":
+    [
+        "E501",
+        "W191"
+    ],
+
+    // Maximum line length for pep8
+    "pep8_max_line_length": 80
+
+}
