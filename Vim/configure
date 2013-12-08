@@ -1,0 +1,10 @@
+./configure --with-features=huge \
+            --enable-rubyinterp \
+            --enable-python3interp \
+            --with-python-config-dir=/usr/lib/python3.3/config-3.3m-x86_64-linux-gnu \
+            --enable-perlinterp \
+            --enable-gui=auto \
+            --enable-cscope \
+            --prefix=/usr \
+            --enable-multibyte \
+            --enable-luainterp
