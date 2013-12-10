@@ -1,0 +1,242 @@
+
+set nocompatible
+set backspace=indent,eol,start
+syntax on
+set termencoding=utf-8
+set encoding=utf-8
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set fillchars+=stl:\ ,stlnc:\
+
+" Parameters
+set t_Co=256
+set number
+set numberwidth=5
+set shiftwidth=4
+set shiftround
+set expandtab
+set tabstop=4
+set softtabstop=4
+
+set smartindent
+set autoindent
+
+set tw=79
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+"highlight column 80
+hi ColorColumn ctermbg=234 ctermfg=Gray guibg=#404040
+command SkinnyMargin set cc=73
+command WideMargin set cc=80
+command NoMargin set cc=
+
+" Remap ---> meilleure indentation"
+vnoremap < <gv
+vnoremap > >gv
+
+" Encodage du fichier"
+set encoding=utf-8
+
+" Affiche les paires de parenthese"
+set showmatch
+
+" Meilleure utilisation du copier coller"
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Rebind <leader< key"
+let mapleader = ";"
+
+" Recherche"
+set hlsearch "
+set incsearch
+set ruler       " show the cursor position all the time
+set ignorecase
+set smartcase
+
+" Backup file et historique"
+set nobackup
+set nowritebackup
+set noswapfile
+set history=700
+set undolevels=700
+
+" Other
+set wildmode=longest:full
+set wildmenu
+
+set foldmethod=indent
+set foldlevel=10
+set foldlevelstart=20
+set foldnestmax=2
+
+set nowrap
+
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" This beauty remembers where you were the last time you edited the file, and returns to the same position.
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+
+
+" { --- Pathogen ---------------------------------------------------------------
+
+filetype on
+call pathogen#incubate()
+call pathogen#helptags()
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" --- { Theme ------------------------------------------------------------------
+
+" Utilisation de Solarized"
+if has('gui_running')
+    set guifont=Anonymous\ Pro\ 15
+    colorscheme solarized
+    let g:solarized_termcolors=16
+    set background=dark
+else
+    colorscheme solarized
+    let g:solarized_termcolors=16
+    set background=light
+endif
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" { --- Python-Mode configuration ----------------------------------------------
+
+" Force Python3
+let g:pymode_python = 'python3'
+
+" Python navigation
+let g:pymode_motion = 1
+
+" PEP 8 indent style
+let g:pymode_indent = 1
+
+" no autofold code
+let g:pymode_folding = 1
+
+" Pymode Run script:
+let g:pymode_run = 1
+let g:pymode_run_key = 'r'
+
+"All path to find a python3 module
+let g:pymode_paths = ["/usr/lib/python3/dist-packages","/usr/lib/python3.3","/usr/local/lib/python3.3/dist-packages"]
+
+"Remove uneeded white spaces
+let g:pymode_trim_whitespaces = 1
+
+" Don't use rope, use jedi to auto-complete
+" PyRope autocomplete
+let g:pymode_rope = 0
+let g:pymode_doc = 0
+let g:pymode_rope_completion = 0
+
+" Linting
+let g:pymode_lint = 1
+let g:pymode_lint_message = 1
+let g:pymode_lint_checker = "pep8,pyflakes,pylint,mccabe,pep257"
+let g:pymode_lint_write = 1
+let g:pymode_lint_ignore = "E501,W191,W0401"
+let g:pymode_lint_signs = 1
+"Choose one of them
+"let g:pymode_lint_todo_symbol = 'WW'
+"let g:pymode_lint_comment_symbol = 'CC'
+"let g:pymode_lint_visual_symbol = 'RR'
+"let g:pymode_lint_error_symbol = 'EE'
+"let g:pymode_lint_info_symbol = 'II'
+let g:pymode_lint_pyflakes_symbol = 'FF'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Debugger
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_cmd = ''
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" --- { SuperTab ---------------------------------------------------------------
+
+"autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, "<c-p>") |
+    \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+    \ endif
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" --- { Powerline or airline ---------------------------------------------------
+
+set rtp+=/usr/local/lib/python3.3/dist-packages/Powerline-beta-py3.3.egg/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" --- { NerdTree ---------------------------------------------------------------
+
+" autocmd vimenter * NERDTree
+let g:NERDTreeWinPos = "left"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.so$', '\.o$', '\.la$', '\.a$', '\.class$', '\~$', '\.beam$', '^Mnesia.', 'deps/', '\.hi$', 'vendor/']
+
+" ---------------------------------------------------------------------------- }
+
+
+
+" --- { Startify ---------------------------------------------------------------
+
+let g:startify_skiplist = [
+             \ 'COMMIT_EDITMSG',
+             \ $VIMRUNTIME .'/doc',
+             \ 'bundle/.*/doc' ,
+             \ 'vimpager'
+             \ ]
+let g:startify_show_sessions = 1
+let g:startify_show_files = 1
+
+" ---------------------------------------------------------------------------- }
