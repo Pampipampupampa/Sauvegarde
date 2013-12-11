@@ -26,6 +26,7 @@ logilab-common==0.60.0
 louis==2.5.3
 lxml==3.2.0
 matplotlib==1.2.1
+mccabe==0.2.1
 numexpr==2.2.2
 numpy==1.8.0
 oauthlib==0.5.1
