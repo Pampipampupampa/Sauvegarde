@@ -1,31 +1,93 @@
 [
-	////////////////////////////////////////////////////////////////
-	///// Raccourcis pour advanced new file (package ajouté) : /////
-	////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////  Comment  //////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
 
-	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
-	{ "keys": ["shift+ctrl+alt+n"], "command": "advanced_new_file", "args": {"is_python": true}},
-
-
-	////////////////////////////////////////
-	///// Raccourci logiciel de base : /////
-	////////////////////////////////////////
-
-	{ "keys": ["ctrl+&"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+é"], "command": "focus_group", "args": { "group": 1 } },
-	{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
-	{ "keys": ["ctrl+'"], "command": "focus_group", "args": { "group": 3 } },
-	{ "keys": ["ctrl+shift+&"], "command": "move_to_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+shift+é"], "command": "move_to_group", "args": { "group": 1 } },
-	{ "keys": ["ctrl+shift+3"], "command": "move_to_group", "args": { "group": 2 } },
-	{ "keys": ["ctrl+shift+'"], "command": "move_to_group", "args": { "group": 3 } },
-	{ "keys": ["ctrl+0"], "command": "focus_side_bar" },
+    { "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
+    { "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
 
 
-	{ "keys": ["alt+x"], "command": "toggle_side_bar" },
-	{ "keys": ["ctrl+,"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
-	{ "keys": ["ctrl+shift+h"], "command": "goto_documentation" },
-	{ "keys": ["shift+f1"], "command": "py_help" },
+    ////////////////////////////////////////////////////////////////////////////
+	///////////////////////  Navigation  ///////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+
+    // Toogle sideBar
+    { "keys": ["alt+x"], "command": "toggle_side_bar" },
+
+    // Show cmdPanel
+    { "keys": ["ctrl+,"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+    // Just one layout
+    {
+        "keys": ["ctrl+w", "ctrl+h"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1]]
+        }
+    },
+
+    // Vertical split (2)
+    {
+        "keys": ["ctrl+w", "ctrl+j"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        }
+    },
+
+    // Horizontal split (2)
+    {
+        "keys": ["ctrl+w", "ctrl+k"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+        }
+    },
+
+    // Grid split (4)
+    {
+        "keys": ["ctrl+w", "ctrl+l"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells":
+            [
+                [0, 0, 1, 1], [1, 0, 2, 1],
+                [0, 1, 1, 2], [1, 1, 2, 2]
+            ]
+        }
+    },
+
+    // Move file to group (1)
+    { "keys": ["ctrl+w", "ctrl+left"], "command": "move_to_group", "args": { "group": 0 } },
+
+    // Move file to group (2)
+    { "keys": ["ctrl+w", "ctrl+right"], "command": "move_to_group", "args": { "group": 1 } },
+
+    // Move file to group (3)
+    { "keys": ["ctrl+w", "ctrl+up"], "command": "move_to_group", "args": { "group": 2 } },
+
+    // Move file to group (4)
+    { "keys": ["ctrl+w", "ctrl+down"], "command": "move_to_group", "args": { "group": 3 } },
+
+    // Move to sidebar (0)
+    { "keys": ["ctrl+w", "ctrl+m"], "command": "focus_side_bar" },
+
+
+	////////////////////////////////////////////////////////////////////////////
+	///////////////////////  Find, Replace, Incremental  ///////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	// Find panel key bindings
 	{ "keys": ["enter"], "command": "find_next", "context":
@@ -63,9 +125,10 @@
 		"context": [{"key": "panel", "operand": "incremental_find"}, {"key": "panel_has_focus"}]
 	},
 
-// Autocompletation voulue
-	{ "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////  Autocompletion  //////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	{ "keys": ["ctrl+space"], "command": "auto_complete" },
 	{ "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
@@ -75,9 +138,11 @@
 			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
 		]
 	},
-	//////////////////////////////////////////////////////////////////////////
-	/////Raccourci pour passer d'un thème à un autre par simple raccourci/////
-	//////////////////////////////////////////////////////////////////////////
+
+
+	////////////////////////////////////////////////////////////////////////////
+	//////////////////////////  Color scheme switch  ///////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	{
     "keys": ["ctrl+*"],
@@ -86,8 +151,6 @@
     	{
        	 	"setting": "color_scheme",
         	"value": "Packages/User/Theme/DarkSolarizedMod.tmTheme"
-        	// "setting": "theme",
-        	// "value": "../Installed Packages/Theme - DarkSolarized/DarkSolarized.sublime-theme"
     	}
 	},
 	{
@@ -96,42 +159,44 @@
     "args":
     	{
        	 	"setting": "color_scheme",
-        	"value": "Packages/Color Scheme - Default/Solarized (Light).tmTheme"
+        	"value": "Packages/User/Theme/LightSolarizedMod.tmTheme"
     	}
 	},
 
 
-	//////////////////////////////////
-	/////Raccourci Sublime linter/////
-	//////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	/////////////////////////// Advances New file : ////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
-	{ "keys": ["ctrl+alt+m"], "command": "sublimelinter", "args": {"action": "lint"}},
+	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
+	{ "keys": ["shift+ctrl+alt+n"], "command": "advanced_new_file", "args": {"is_python": true}},
 
 
-	/////////////////////////////////
-	///// Search in browser /////////
-	/////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////  Open browser  ///////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	{ "keys": ["ctrl+alt+g"], "command": "open_browser", "args" : {"url" : "http://docs.python.org/3.3/search.html?q=%s"}},
 	{ "keys": ["ctrl+alt+f"], "command": "open_browser", "args" : {"url" : "http://www.pygame.org/docs/ref/%s.html"}},
 	{ "keys": ["ctrl+alt+h"], "command": "open_browser", "args" : {"url" : "http://srinikom.github.io/pyside-docs/search.html?q=%s"}},
 
 
-	////////////////////////////////
-	///////////// Rope /////////////
-	////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////// Sticky Search ///////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
-    { "keys": ["ctrl+alt+m"], "command": "python_get_documentation"},
-
-
-	/////////////////////////////////////////
-	///////////// Sticky Search /////////////
-	/////////////////////////////////////////
-
-	// <binding key="ctrl+shift+keypad_divide" command="findNext" />
 	{ "keys": ["ctrl+!"], "command": "stickysearch", "args": {"op" : "set"} },
 	{ "keys": ["ctrl+shift+!"], "command": "stickysearch", "args": {"op" : "add"} },
-	{ "keys": ["ctrl+alt+!"], "command": "stickysearch", "args": {"op" : "clear"} }
+	{ "keys": ["ctrl+alt+!"], "command": "stickysearch", "args": {"op" : "clear"} },
+
+
+	////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////// Anaconda ///////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+
+   	 {"command": "anaconda_goto", "keys": ["ctrl+alt+ù"]},
+   	 {"command": "anaconda_find_usages", "keys": ["ctrl+alt+*"]},
+   	 {"command": "anaconda_doc", "keys": ["ctrl+alt+m"]},
 
 
 ]
