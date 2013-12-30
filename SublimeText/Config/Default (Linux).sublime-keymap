@@ -194,9 +194,8 @@
 	/////////////////////////////// Anaconda ///////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////
 
-   	 {"command": "anaconda_goto", "keys": ["ctrl+alt+ù"]},
-   	 {"command": "anaconda_find_usages", "keys": ["ctrl+alt+*"]},
-   	 {"command": "anaconda_doc", "keys": ["ctrl+alt+m"]},
-
+   	{"command": "anaconda_goto", "keys": ["ctrl+alt+ù"]},
+   	{"command": "anaconda_find_usages", "keys": ["ctrl+alt+*"]},
+   	{"command": "anaconda_doc", "keys": ["ctrl+alt+m"]},
 
 ]

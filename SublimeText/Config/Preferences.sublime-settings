@@ -1,10 +1,28 @@
 {
 	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/Theme/LightSolarized.tmTheme",
 	"draw_minimap_border": false,
 	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.pid",
+		"*.pyc",
+		"*.gitignore",
+		"*.md"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"__pycache__",
+		"env",
+		"env3"
+	],
 	"font_face": "Anonymous Pro",
 	"font_size": 15,
+	"highlight_line": false,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -13,28 +31,10 @@
 	[
 		80
 	],
+	"show_panel_on_build": false,
 	"theme": "Phoenix Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": false,
-    "caret_style": "phase",
-    "wide_caret": true,
-    "highlight_line": false,
-    "file_exclude_patterns":
-    [
-        ".DS_Store",
-        "*.pid",
-        "*.pyc",
-        "*.gitignore",
-        "*.md"
-    ],
-    "folder_exclude_patterns":
-    [
-        ".git",
-        "__pycache__",
-        "env",
-        "env3"
-    ],
-    "close_windows_when_empty": false,
-    "show_panel_on_build": false
+	"wide_caret": true,
+	"word_wrap": false
 }
